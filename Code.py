@@ -47,8 +47,8 @@ scat2 = {"":"","Surface" : agri['SURFACE_HA']}
 
 #Pie chart
 if graph == 'Pie':
-    dataset = px.data.gapminder().query("BIO == 1.0000")
-    camembert = px.pie(dataset, color_discrete_sequence=px.colors.sequential.RdBu)
+    
+    camembert = px.pie(agri, color_discrete_sequence=px.colors.sequential.RdBu)
     st.plotly_chart(camembert)
         
 #Bar chart
