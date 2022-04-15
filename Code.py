@@ -34,7 +34,7 @@ if st.checkbox('Do you want to see the dataset?'):
 
 #I want to know for how much time the function has run
 def function_time(fonction):
-    @wraps(fontion)
+    @wraps(fonction)
     def temps(*args, **kwargs):
         debut =time()
         try:
