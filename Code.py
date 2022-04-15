@@ -50,11 +50,11 @@ def figure():
     #Pie chart
     if graph == 'Pie':
         dataset = px.data.gapminder().query("BIO == 1.0000")
-        camembert = px.pie(dataset, names='Cultures', color_discrete_sequence=px.colors.sequential.RdBu)
+        camembert = px.pie(dataset, color_discrete_sequence=px.colors.sequential.RdBu)
         st.plotly_chart(camembert)
         
     #Bar chart
     if graph == 'Bar':
-        barre = px.scatter(x=agri[CODE_CULTU] ,y=agri[SURFACE_HA])
+        barre = px.scatter(x=[1,2,3,4] ,y=agri[10,5,25,30])
         barre.show()
       
