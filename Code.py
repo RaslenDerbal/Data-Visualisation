@@ -53,7 +53,7 @@ if graph == 'Pie':
         
 #Bar chart
 if graph == 'Bar':
-    barre = px.bar(agri, x=[1,2,3] ,y=[5,10,15], orientation='h')
+    barre = px.bar(agri, x=[1,2,3] ,y=['5','10','15'], orientation='h')
     barre.show()
 
     
