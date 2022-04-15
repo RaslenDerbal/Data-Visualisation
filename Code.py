@@ -45,7 +45,6 @@ scat1 = {"":"","Culture Code" : agri['CODE_CULTU'],"Culture Library" : agri['LBL
 scat2 = {"":"","Surface" : agri['SURFACE_HA']}
 
 #Add the figures
-@measure
 def figure(agri):
     
     #Pie chart
