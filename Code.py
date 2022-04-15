@@ -48,7 +48,7 @@ scat2 = {"":"","Surface" : agri['SURFACE_HA']}
 #Pie chart
 if graph == 'Pie':
     
-    camembert = px.pie(agri,values= 'CODE_CULTU',name='SURFACE_HA', title='Pie chart of the surface of the culture in ha')
+    camembert = px.pie(agri,values= 'CODE_CULTU',names='SURFACE_HA', title='Pie chart of the surface of the culture in ha')
     st.plotly_chart(camembert)
         
 #Bar chart
