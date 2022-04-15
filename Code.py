@@ -32,19 +32,19 @@ if st.checkbox('Do you want to see the dataset?'):
     st.write(agri.sample(frac= 0.5,replace = True, random_state=1))
 
 
-#Decorators in order to know the execution time of the functions
-def measure(func):
-    @wraps(func)
-    def time_it(*args, **kwargs):
-        start =time()
+#I want to know for how much time the function has run
+def function_time(fonction):
+    @wraps(fontion)
+    def temps(*args, **kwargs):
+        debut =time()
         try:
-            return func(*args, **kwargs)
+            return fonction(*args, **kwargs)
         finally:
-            end = time() - start
-            with open("logs.txt","a") as f:
-                f.write('Total Execution time: {end}s')
-            print(f'Total Execution time: {end}s')
-    return time_it
+            fin = time() - debut
+            with open("logs.txt","a") as o:
+                o.write('Total time of execution: {end}s')
+            print(f'Total time of execution: {fin}s')
+    return temps
 
 #Plot the data in multiple forms
 
@@ -59,7 +59,7 @@ scat1 = {"":"","Culture Code" : agri['CODE_CULTU'],"Culture Library" : agri['LBL
 scat2 = {"":"","Surface" : agri['SURFACE_HA']}
 
 #Add the figures
-@measure
+@function_time
 def figure(agri):
     
     #Pie chart
