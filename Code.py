@@ -63,7 +63,7 @@ def figure(dataset):
     
     #Pie chart
     if graph == 'Pie':
-        camembert = px.pie(data_frame=dataset, values='GRP_CULTU', names='Cultures', color_discrete_sequence=px.colors.sequential.RdBu)
+        camembert = px.pie(data_frame=dataset, names='Cultures', color_discrete_sequence=px.colors.sequential.RdBu)
         st.plotly_chart(camembert)
         
     #Bar chart
