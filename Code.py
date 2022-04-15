@@ -53,6 +53,6 @@ if graph == 'Pie':
         
 #Bar chart
 if graph == 'Bar':
-    barre = px.scatter(x=agri[BIO] ,y=agri[SURFACE_HA])
+    barre = px.scatter(agri, x="CODE_CULTU" ,y="SURFACE_HA")
     barre.show()
       
