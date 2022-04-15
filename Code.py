@@ -53,5 +53,5 @@ if graph == 'Pie':
         
 #Bar chart
 if graph == 'Bar':
-    barre = px.scatter(agri, x="CODE_CULTU" ,y="SURFACE_HA")
+    barre = px.scatter(agri, x="CODE_CULTU" ,y="SURFACE_HA",color='SURFACE_HA')
     barre.show()
