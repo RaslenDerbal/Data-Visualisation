@@ -50,7 +50,6 @@ def function_time(fonction):
 
 #Adding the filters on the dataset
 st.sidebar.header('Choose what to show')
-slide = st.slider('Linear graph or Map graph here :',min_value= 0 , max_value= 2)
 graph = st.sidebar.selectbox(label ="Choose what graph to use",options=['','Pie','Bar'])
 colonnes = agri.select_dtypes(['float','int','object']).columns
 
