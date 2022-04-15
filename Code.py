@@ -8,10 +8,10 @@ import plotly.figure_factory as ff
 import plotly.express as px
 import matplotlib
 import matplotlib.pyplot as plt
-from functools import wraps
-import time
 import seaborn as sns
 import os
+import plotly.graph_objects as go
+
 
 #Opening and loading the data
 @st.cache
@@ -53,7 +53,9 @@ if graph == 'Pie':
         
 #Bar chart
 if graph == 'Bar':
-    barre = px.bar( x=[1,2,3] ,y=['5','10','15'], orientation='h')
-    barre.show()
+    go.Figure(go.Bar(
+            x=[20, 14, 23],
+            y=['giraffes', 'orangutans', 'monkeys'],
+            orientation='h'))
 
     
