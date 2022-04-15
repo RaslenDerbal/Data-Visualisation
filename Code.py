@@ -53,9 +53,6 @@ if graph == 'Pie':
         
 #Bar chart
 if graph == 'Bar':
-    fig=go.Figure(go.Bar(
-            x=[20, 14, 23],
-            y=['giraffes', 'orangutans', 'monkeys'],
-            orientation='h'))
+    fig=([1,2,3],[5,10,15])
     plt.show(fig)
     
