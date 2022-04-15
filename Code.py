@@ -57,5 +57,5 @@ if graph == 'Bar':
             x=[20, 14, 23],
             y=['giraffes', 'orangutans', 'monkeys'],
             orientation='h'))
-    fig.show()
+    plt.plot(fig)
     
