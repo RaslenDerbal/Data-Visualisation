@@ -54,5 +54,5 @@ if graph == 'Pie':
 #Bar chart
 if graph == 'Bar':
     fig=([1,2,3],[5,10,15])
-    plt.plot(fig)
+    st.plotly_chart(fig)
     
