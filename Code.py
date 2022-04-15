@@ -53,6 +53,7 @@ if graph == 'Pie':
         
 #Bar chart
 if graph == 'Bar':
-    barre = px.scatter(agri, x="CODE_CULTU" ,y="SURFACE_HA")
-    barre.show()
+    df = px.data.iris() # iris is a pandas DataFrame
+    fig = px.scatter(df, x="sepal_width", y="sepal_length")
+    fig.show()
       
