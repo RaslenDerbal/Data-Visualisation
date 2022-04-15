@@ -38,7 +38,6 @@ if st.checkbox('Do you want to see the dataset?'):
 #Adding the filters on the dataset
 st.sidebar.header('Choose what to show')
 graph = st.sidebar.selectbox(label ="Choose what graph to use",options=['','Pie','Bar'])
-colonnes = agri.select_dtypes(['float','int','object']).columns
 
 #Coordonates for the bar
 scat1 = {"":"","Culture Code" : agri['CODE_CULTU'],"Culture Library" : agri['LBL_CULTU']}
@@ -46,18 +45,16 @@ scat2 = {"":"","Surface" : agri['SURFACE_HA']}
 
 #Add the figures
 
-def figure(dataset):
+def figure():
     
     #Pie chart
     if graph == 'Pie':
-        camembert = px.pie(data_frame=dataset, names='Cultures', color_discrete_sequence=px.colors.sequential.RdBu)
+        dataset = px.data.gapminder().query("BIO == 1.0000")
+        camembert = px.pie(dataset, names='Cultures', color_discrete_sequence=px.colors.sequential.RdBu)
         st.plotly_chart(camembert)
         
     #Bar chart
     if graph == 'Bar':
-        st.sidebar.subheader('Choose values to show')
-        abscissa = st.sidebar.selectbox('Abscissa', options=scat1)
-        ordonate =  st.sidebar.selectbox('Ordonate', options=scat2)
-        barre = px.scatter(data_frame=dataset, x=abscissa ,y=ordonate, color_discrete_sequence=px.colors.sequential.RdBu)
+        barre = px.scatter(x=agri[CODE_CULTU] ,y=agri[SURFACE_HA])
         barre.show()
       
