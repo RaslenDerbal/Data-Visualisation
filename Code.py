@@ -51,8 +51,8 @@ def function_time(fonction):
 #Adding the filters on the dataset
 st.sidebar.header('Choose what to show')
 slide = st.slider('Linear graph or Map graph here :',min_value= 0 , max_value= 2)
-graph = st.sidebar.selectbox(label ="Choose what graph to use",options=['Pie','Bar'])
-colonnes = agri.select_dtypes(['float','int']).columns
+graph = st.sidebar.selectbox(label ="Choose what graph to use",options=['','Pie','Bar'])
+colonnes = agri.select_dtypes(['float','int','str']).columns
 
 #Coordonates for the bar
 scat1 = {"":"","Culture Code" : agri['CODE_CULTU'],"Culture Library" : agri['LBL_CULTU']}
@@ -64,14 +64,14 @@ def figure(dataset):
     
     #Pie chart
     if graph == 'Pie':
-        camembert = px.pie(dataset, values='GRP_CULTU', names='Cultures', color_discrete_sequence=px.colors.sequential.RdBu)
-        camembert.show()
+        camembert = px.pie(data_frame=dataset, values='GRP_CULTU', names='Cultures', color_discrete_sequence=px.colors.sequential.RdBu)
+        st.plotly_chart(camembert)
         
     #Bar chart
     if graph == 'Bar':
         st.sidebar.subheader('Choose values to show')
         abscissa = st.sidebar.selectbox('Abscissa', options=scat1)
         ordonate =  st.sidebar.selectbox('Ordonate', options=scat2)
-        barre = px.scatter(dataset, x=abscissa ,y=ordonate, color_discrete_sequence=px.colors.sequential.RdBu)
+        barre = px.scatter(data_frame=dataset, x=abscissa ,y=ordonate, color_discrete_sequence=px.colors.sequential.RdBu)
         barre.show()
       
